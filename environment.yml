@@ -11,3 +11,6 @@ dependencies:
   - java-jdk
   - python>=3.9
   - pip
+  - pip:
+    - SigProfilerMatrixGenerator 
+    - SigProfilerExtractor
