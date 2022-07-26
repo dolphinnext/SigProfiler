@@ -40,9 +40,6 @@ RUN . /opt/conda/etc/profile.d/conda.sh && \
     mamba env create -f /environment.yml && \
     mamba clean -a
 
-RUN pip install SigProfilerMatrixGenerator
-RUN pip install SigProfilerExtractor
-
 RUN mkdir -p /project /nl /mnt /share
 ENV PATH /opt/conda/envs/dolphinnext/bin:$PATH
 
