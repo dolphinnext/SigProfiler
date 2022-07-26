@@ -38,7 +38,6 @@ RUN . /opt/conda/etc/profile.d/conda.sh && \
     conda update conda && \
     conda install -c conda-forge mamba && \
     mamba env create -f /environment.yml && \
-    mamba install -c bioconda snpeff && \
     mamba clean -a
 
 RUN pip install SigProfilerMatrixGenerator
