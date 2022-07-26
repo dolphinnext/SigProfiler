@@ -9,3 +9,5 @@ channels:
 dependencies:
   - R=4.1
   - java-jdk
+  - python>=3.9
+  - pip
