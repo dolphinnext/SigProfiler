@@ -8,9 +8,9 @@ channels:
   - anaconda
 dependencies:
   - R=4.1
-  - java-jdk
-  - python>=3.9
   - pip
+  - r-devtools
+  - numpy
   - pip:
-    - SigProfilerMatrixGenerator 
-    - SigProfilerExtractor
+     - SigProfilerMatrixGenerator
+     - numpy

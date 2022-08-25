@@ -33,6 +33,7 @@ RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86
     echo "conda activate base" >> ~/.bashrc
 
 COPY environment.yml /
+ARG MAMBA_DOCKERFILE_ACTIVATE=1
 RUN . /opt/conda/etc/profile.d/conda.sh && \ 
     conda activate base && \
     conda update conda && \
@@ -40,8 +41,12 @@ RUN . /opt/conda/etc/profile.d/conda.sh && \
     mamba env create -f /environment.yml && \
     mamba clean -a
 
+
 RUN mkdir -p /project /nl /mnt /share
 ENV PATH /opt/conda/envs/dolphinnext/bin:$PATH
+
+RUN apt-get update
+RUN apt-get install -y --reinstall build-essential
 
 # R Packages Installation
 COPY install_packages.R /
