@@ -14,15 +14,15 @@ RUN apt -y install \
 	bzip2 \
 	libbz2-dev \
 	xz-utils \
-    liblzma-dev \
+	liblzma-dev \
 	curl \
-    libcurl4-openssl-dev \
+	libcurl4-openssl-dev \
 	libssl-dev \
 	ncurses-dev \
 	graphviz \
-    unzip \
-    zip \
-    rsync
+	unzip \
+	zip \
+	rsync
 
 RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
     /bin/bash ~/miniconda.sh -b -p /opt/conda && \
