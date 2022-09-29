@@ -9,3 +9,10 @@ packages <- c('devtools', 'reticulate')
 inst_pack(packages)
 
 devtools::install_github("AlexandrovLab/SigProfilerMatrixGeneratorR")
+
+library("reticulate")
+use_python("/opt/conda/bin/python")
+py_install("numpy")
+py_config()
+system("pip install SigProfilerMatrixGenerator")
+#SigProfilerMatrixGeneratorR::install('GRCm38.p6', rsync=FALSE, bash=TRUE)
