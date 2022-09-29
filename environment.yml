@@ -7,10 +7,4 @@ channels:
   - defaults
   - anaconda
 dependencies:
-  - R=4.1
-  - java-jdk
-  - python>=3.9
   - pip
-  - pip:
-    - SigProfilerMatrixGenerator 
-    - SigProfilerExtractor
