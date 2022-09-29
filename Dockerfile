@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:16.04
 
 RUN apt -y update
 
@@ -47,7 +47,6 @@ ENV PATH /opt/conda/envs/dolphinnext/bin:$PATH
 
 RUN apt-get update
 RUN apt-get install -y --reinstall build-essential
-
 RUN cd /usr/local/share && git clone https://github.com/AlexandrovLab/SigProfilerMatrixGenerator.git
 COPY install.py /usr/local/share/SigProfilerMatrixGenerator/SigProfilerMatrixGenerator/
 RUN pip install /usr/local/share/SigProfilerMatrixGenerator 
