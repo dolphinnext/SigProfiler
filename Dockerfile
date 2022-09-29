@@ -52,4 +52,6 @@ COPY install.py /usr/local/share/SigProfilerMatrixGenerator/SigProfilerMatrixGen
 RUN pip install /usr/local/share/SigProfilerMatrixGenerator 
 COPY installMouse.py /
 RUN python installMouse.py  
+RUN wget https://github.com/arq5x/bedtools2/releases/download/v2.30.0/bedtools.static.binary && \
+    mv bedtools.static.binary /usr/local/bin/bedtools && chmod 755 /usr/local/bin/bedtools
 
