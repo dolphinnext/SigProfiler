@@ -48,6 +48,11 @@ ENV PATH /opt/conda/envs/dolphinnext/bin:$PATH
 RUN apt-get update
 RUN apt-get install -y --reinstall build-essential
 
-# R Packages Installation
-COPY install_packages.R /
-RUN Rscript /install_packages.R
+RUN cd /usr/local/share && git clone https://github.com/AlexandrovLab/SigProfilerMatrixGenerator.git
+COPY install.py /usr/local/share/SigProfilerMatrixGenerator/SigProfilerMatrixGenerator/
+RUN pip install /usr/local/share/SigProfilerMatrixGenerator 
+COPY installMouse.py /
+RUN python installMouse.py  
+RUN wget https://github.com/arq5x/bedtools2/releases/download/v2.30.0/bedtools.static.binary && \
+    mv bedtools.static.binary /usr/local/bin/bedtools && chmod 755 /usr/local/bin/bedtools
+

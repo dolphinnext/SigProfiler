@@ -7,6 +7,5 @@ channels:
   - defaults
   - anaconda
 dependencies:
-  - R=4.1
   - pip
-  - r-devtools
+
