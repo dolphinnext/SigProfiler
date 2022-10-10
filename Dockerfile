@@ -22,7 +22,8 @@ RUN apt -y install \
 	graphviz \
 	unzip \
 	zip \
-	rsync
+	rsync \
+	bedtools
 
 RUN wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
     /bin/bash ~/miniconda.sh -b -p /opt/conda && \
@@ -52,6 +53,5 @@ COPY install.py /usr/local/share/SigProfilerMatrixGenerator/SigProfilerMatrixGen
 RUN pip install /usr/local/share/SigProfilerMatrixGenerator 
 COPY installMouse.py /
 RUN python installMouse.py  
-RUN wget https://github.com/arq5x/bedtools2/releases/download/v2.30.0/bedtools.static.binary && \
-    mv bedtools.static.binary /usr/local/bin/bedtools && chmod 755 /usr/local/bin/bedtools
+
 
